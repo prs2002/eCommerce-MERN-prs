@@ -72,6 +72,7 @@ const ProductEditScreen = () => {
 
   const uploadFileHandler = async (e) => {
     const formData = new FormData();
+    console.log(e.target.files[0]);
     formData.append('image', e.target.files[0]);
     try {
       const res = await uploadProductImage(formData).unwrap();
@@ -94,7 +95,7 @@ const ProductEditScreen = () => {
         {isLoading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          <Message variant='danger'>{error.data.message}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
