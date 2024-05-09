@@ -121,12 +121,13 @@ const OrderScreen = () => {
               <p>
                 <strong>Email: </strong>{order.user.email}
               </p>
+              {order.shippingAddress.length > 0 && (
               <p>
-                <strong>Address:</strong>
-                {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
-                {order.shippingAddress.postalCode},{' '}
-                {order.shippingAddress.country}
+                <strong>Address:</strong> {order.shippingAddress[0].address},{' '}
+                {order.shippingAddress[0].city} {order.shippingAddress[0].postalCode},{' '}
+                {order.shippingAddress[0].country}
               </p>
+              )}
               {order.isDelivered ? (
                 <Message variant='success'>
                   Delivered on {order.deliveredAt}
