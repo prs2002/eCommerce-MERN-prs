@@ -8,6 +8,7 @@ const SearchBox = () => {
   const { keyword: urlKeyword } = useParams();
 
   // FIX: uncontrolled input - urlKeyword may be undefined
+  // add suggestions first and then add debounce
   const [keyword, setKeyword] = useState(urlKeyword || '');
 
   const submitHandler = (e) => {
