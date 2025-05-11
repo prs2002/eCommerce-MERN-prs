@@ -4,3 +4,6 @@
 payment processing.
 • Built a scalable and robust backend API using Node.js and Express.js to handle product management, user
 authentication, order processing, and payment integration.
+
+## Try the app, make a demo purchase using paypal sandbox
+### Demo : https://techemporium.onrender.com/
